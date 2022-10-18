@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Disparo_Player.wav-b623f589a2d52c49120b57a2fcaed792.sample"
+
+[deps]
+
+source_file="res://Juego/Sonidos/Disparo_Player.wav"
+dest_files=[ "res://.import/Disparo_Player.wav-b623f589a2d52c49120b57a2fcaed792.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

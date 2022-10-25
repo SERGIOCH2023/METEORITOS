@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/EscudoSFX.ogg-01d092b9915e930128a561d377c31f41.oggstr"
+
+[deps]
+
+source_file="res://Juego/Sonidos/EscudoSFX.ogg"
+dest_files=[ "res://.import/EscudoSFX.ogg-01d092b9915e930128a561d377c31f41.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

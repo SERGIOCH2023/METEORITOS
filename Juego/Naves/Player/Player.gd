@@ -20,6 +20,9 @@ onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_sfx:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_sfx:AudioStreamPlayer =$ImpactosSFX
+onready var escudo:Escudo = $Escudo
+
+
 
 ## Enums
 enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
@@ -37,7 +40,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if event.is_action_released("disparo_secundario"):
 		laser.set_is_casting(false)
-
+	
+	#Control Escudo
+	if event.is_action_pressed("escudo")and not escudo.get_esta_activado():
+		escudo.activar()
 	#Control Estela
 	if event.is_action_pressed("mover_adelante"):
 		estela.set_max_points(estela_maxima)

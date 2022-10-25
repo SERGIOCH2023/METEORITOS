@@ -6,11 +6,10 @@
 [ext_resource path="res://Juego/Sonidos/EscudoSFX.tres" type="AudioStream" id=4]
 [ext_resource path="res://Juego/Naves/Player/Escudo/Escudo.gd" type="Script" id=5]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 81.6824
 
-[sub_resource type="Animation" id=1]
-resource_name = "activado"
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteCompleto:scale")
@@ -37,8 +36,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "activandose"
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteAbriendo1:visible")
@@ -113,8 +111,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "default"
+[sub_resource type="Animation" id=4]
 length = 0.001
 
 [node name="Escudo" type="Area2D"]
@@ -124,7 +121,7 @@ collision_mask = 16
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="SpriteAbriendo1" type="Sprite" parent="."]
 rotation = 1.5708
@@ -144,12 +141,13 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/activado = SubResource( 1 )
-anims/activandose = SubResource( 2 )
-anims/default = SubResource( 3 )
+anims/activado = SubResource( 2 )
+anims/activandose = SubResource( 3 )
+anims/default = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -9.6
 bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

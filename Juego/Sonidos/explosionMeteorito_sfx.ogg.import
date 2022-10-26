@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/explosionMeteorito_sfx.ogg-0c336b11ae59b48b7adf6b9b403d07b3.oggstr"
+
+[deps]
+
+source_file="res://Juego/Sonidos/explosionMeteorito_sfx.ogg"
+dest_files=[ "res://.import/explosionMeteorito_sfx.ogg-0c336b11ae59b48b7adf6b9b403d07b3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

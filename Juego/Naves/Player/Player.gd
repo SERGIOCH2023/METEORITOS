@@ -15,15 +15,18 @@ var dir_rotacion:int = 0
 
 ## Atributos Onready
 onready var canion:Canion = $Canion
-onready var laser:RayoLaser = $LaserBeam2D
+onready var laser:RayoLaser = $LaserBeam2D setget ,get_laser
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_sfx:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_sfx:AudioStreamPlayer =$ImpactosSFX
 onready var escudo:Escudo = $Escudo
 
-
-
+##Setters y Getters
+func get_laser()-> RayoLaser:
+	return laser
+func get_escudo()-> Escudo:
+	return escudo
 ## Enums
 enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
 

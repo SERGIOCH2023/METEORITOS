@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CargadeEnergia.ogg-429913f3b0e17d334d7339a6bbb19156.oggstr"
+
+[deps]
+
+source_file="res://Juego/Sonidos/CargadeEnergia.ogg"
+dest_files=[ "res://.import/CargadeEnergia.ogg-429913f3b0e17d334d7339a6bbb19156.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

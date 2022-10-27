@@ -11,6 +11,7 @@ onready var impacto_anim:AnimationPlayer = $AnimationPlayer
 onready var impacto_sfx:AudioStreamPlayer = $impacto_sfx
 ##Atributos
 var hitpoints: float
+var esta_destruido:bool = false
 var esta_en_sector:bool = true setget set_esta_en_sector
 var pos_spawn_original:Vector2
 var vel_spawn_original:Vector2
@@ -18,6 +19,7 @@ var vel_spawn_original:Vector2
 ##Metodos
 func _ready() -> void:
 	angular_velocity = vel_ang_base
+
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	if esta_en_sector:
@@ -57,9 +59,10 @@ func aleatorizar_velocidad()-> float:
 
 func recibir_danio(danio: float)-> void:
 	hitpoints -= danio
-	if hitpoints <=0:
+	if hitpoints <=0 and not esta_destruido:
+		esta_destruido = true
 		destruir()
-	impacto_sfx.play()
+	#impacto_sfx.play()
 	impacto_anim.play("impacto")
 
 func destruir()-> void:

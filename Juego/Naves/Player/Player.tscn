@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Player/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Juego/Proyectiles/ProyectilPlayer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Sonidos/ImpactoSFX.tres" type="AudioStream" id=8]
 [ext_resource path="res://Juego/Naves/Player/Escudo/Escudo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Juego/Naves/Player/CamaraPlayer.gd" type="Script" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -101,6 +102,9 @@ modulate = Color( 0.811091, 1.70196, 0, 1 )
 
 [node name="CamaraPlayer" type="Camera2D" parent="."]
 current = true
+script = ExtResource( 10 )
+
+[node name="TweenZoom" type="Tween" parent="CamaraPlayer"]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

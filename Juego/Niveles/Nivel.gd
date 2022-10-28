@@ -136,9 +136,6 @@ func crear_posicion_aleatoria(rango_horizontal: float, rango_vertical:float)->Ve
 	
 	return Vector2(rand_x, rand_y)
 
-##coneccion Señales externas
-
-
 
 func _on_TweenCamara_tween_completed(object: Object, key: NodePath) -> void:
 	if object.name == "CamaraPlayer":

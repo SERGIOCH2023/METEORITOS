@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Juego/Naves/NaveBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Naves/Player/Estela/EstelaPuntoInicio.tscn" type="PackedScene" id=2]
@@ -6,18 +6,48 @@
 [ext_resource path="res://Juego/Proyectiles/Laser/LaserBeam2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Juego/Naves/Player/CamaraPlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Juego/Naves/Player/Motor/MotorSFX.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Naves/Player/MaterialFisico.tres" type="PhysicsMaterial" id=7]
+[ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=8]
 [ext_resource path="res://Juego/Naves/Player/Escudo/Escudo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Juego/Naves/Player/Player.gd" type="Script" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 39.8928
 
 [node name="Player" instance=ExtResource( 1 )]
 z_index = 50
 z_as_relative = false
 collision_layer = 1
 collision_mask = 22
-script = null
+physics_material_override = ExtResource( 7 )
+contacts_reported = 2
+contact_monitor = true
+can_sleep = false
+linear_damp = 1.5
+angular_damp = 4.5
+script = ExtResource( 10 )
+
+[node name="Sprite" parent="." index="0"]
+rotation = 1.5708
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Canion" parent="." index="2"]
+velocidad_proyectil = 1500
+
+[node name="PuntoIzquierdo" parent="Canion" index="0"]
+position = Vector2( 0, 28 )
+
+[node name="PuntoDerecho" parent="Canion" index="1"]
+position = Vector2( 0, -28 )
 
 [node name="Escudo" parent="." index="4" instance=ExtResource( 9 )]
 
 [node name="EstelaPuntoInicio" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( -13.7698, 0.0828517 )
 
 [node name="MotorSFX" parent="." index="6" instance=ExtResource( 6 )]
 
@@ -26,3 +56,11 @@ script = null
 [node name="CamaraPlayer" parent="." index="8" instance=ExtResource( 5 )]
 
 [node name="LaserBeam2D" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 32.3745, 0 )
+z_index = 41
+z_as_relative = false
+collision_mask = 6
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Canion"]

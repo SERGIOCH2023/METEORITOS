@@ -616,26 +616,32 @@ anims/default = SubResource( 1 )
 anims/explosion = SubResource( 2 )
 
 [node name="SpriteDiminuto1" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 2 )
 
 [node name="SpriteDiminuto2" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 3 )
 
 [node name="SpriteMedio1" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 6 )
 
 [node name="SpriteMedio2" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 5 )
 
 [node name="SpritePequeño1" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 1 )
 
 [node name="SpritePequeño2" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 4 )
 

@@ -36,12 +36,16 @@ func conectar_seniales() -> void:
 	Eventos.connect("meteorito_destruido",self,"_on_meteorito_destruido")
 	Eventos.connect("nave_en_sector_peligro",self,"_on_nave_en_sector_peligro")
 	Eventos.connect("base_destruida",self,"_on_base_destruida")
+	Eventos.connect("spawn_orbital",self,"_on_spawn_orbital")
 
 func _on_meteorito_destruido(pos: Vector2)-> void:
 	var new_explosion:ExplosionMeteorito = explosion_meteorito.instance()
 	new_explosion.global_position=pos
 	add_child(new_explosion)
 	controlar_meteoritos_restantes()
+
+func _on_spawn_orbital(enemigo: EnemigoOrbital)-> void:
+	contenedor_enemigos.add_child(enemigo)
 
 func crear_contenedores() -> void:
 	contenedor_proyectiles = Node.new()
@@ -64,7 +68,7 @@ func _on_nave_destruida(nave: Player, posicion: Vector2, num_explosiones: int) -
 	if nave is Player:
 		transicion_camaras(
 			posicion,
-			posicion+crear_posicion_aleatoria(-200.0,200.0),
+			posicion+crear_posicion_aleatoria(200.0,200.0),
 			camara_nivel,
 			tiempo_transicion_camara
 		)

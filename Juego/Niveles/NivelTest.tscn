@@ -41,6 +41,11 @@ position = Vector2( 1510.96, 506.03 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
+[node name="ContenedorBasesEnemigas" type="Node" parent="."]
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( 330.552, -872.998 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
 
@@ -117,9 +122,6 @@ position = Vector2( 2000, 1000 )
 texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 755.481, 705.591 )
-
-[node name="BaseEnemiga" parent="." instance=ExtResource( 13 )]
-position = Vector2( 616.17, 1221.53 )
+position = Vector2( 1047.7, -883.772 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]

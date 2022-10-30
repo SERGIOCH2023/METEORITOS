@@ -18,7 +18,7 @@ radius = 39.8928
 z_index = 50
 z_as_relative = false
 collision_layer = 1
-collision_mask = 22
+collision_mask = 54
 physics_material_override = ExtResource( 7 )
 contacts_reported = 2
 contact_monitor = true
@@ -53,13 +53,13 @@ position = Vector2( -13.7698, 0.0828517 )
 
 [node name="AnimationPlayer" parent="." index="7" instance=ExtResource( 3 )]
 
-[node name="CamaraPlayer" parent="." index="8" instance=ExtResource( 5 )]
-
-[node name="LaserBeam2D" parent="." index="9" instance=ExtResource( 4 )]
+[node name="LaserBeam2D" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 32.3745, 0 )
 z_index = 41
 z_as_relative = false
-collision_mask = 6
+collide_with_areas = true
+
+[node name="CamaraPlayer" parent="." index="9" instance=ExtResource( 5 )]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

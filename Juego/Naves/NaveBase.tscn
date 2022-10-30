@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/Naves/NaveBase.gd" type="Script" id=2]
+[ext_resource path="res://Juego/Proyectiles/Canion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Proyectiles/ProyectilPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Juego/Sonidos/ImpactoSFX.tres" type="AudioStream" id=8]
+
+[node name="NaveBase" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.176781, 0 )
+
+[node name="Canion" parent="." instance=ExtResource( 3 )]
+proyectil = ExtResource( 7 )
+
+[node name="ImpactosSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

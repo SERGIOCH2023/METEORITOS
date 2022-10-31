@@ -7,8 +7,10 @@ export var explosion:PackedScene = null
 export var meteorito:PackedScene = null
 export var explosion_meteorito:PackedScene = null
 export var sector_meteoritos:PackedScene = null
-export var tiempo_transicion_camara:float = 4.0
+export var tiempo_transicion_camara:float = 2.0
 export var enemigo_interceptor:PackedScene = null
+export var rele_masa:PackedScene = null
+
 
 ##Atributos Onready
 onready var contenedor_enemigos:Node
@@ -21,11 +23,14 @@ onready var camaraplayer:CamaraPlayer=$Player/CamaraPlayer
 ##Atributos
 var meteoritos_totales:int=0
 var player:Player=null
+var numero_bases_enemigas = 0
 
 ## Metodos
 func _ready() -> void:
 	conectar_seniales()
 	crear_contenedores()
+	player = DatosJuego.get_player_actual()
+	numero_bases_enemigas = contabilizar_bases_enemigas()
 	player = DatosJuego.get_player_actual()
 
 ## Metodos Custom
@@ -37,6 +42,15 @@ func conectar_seniales() -> void:
 	Eventos.connect("nave_en_sector_peligro",self,"_on_nave_en_sector_peligro")
 	Eventos.connect("base_destruida",self,"_on_base_destruida")
 	Eventos.connect("spawn_orbital",self,"_on_spawn_orbital")
+
+func contabilizar_bases_enemigas() -> int:
+	return $ContenedorBasesEnemigas.get_child_count()
+
+func crear_rele() -> void:
+	var new_rele_masa: ReleDeMasa = rele_masa.instance()
+	new_rele_masa.global_position = player.global_position + crear_posicion_aleatoria(1000.0, 800.0)
+	add_child(new_rele_masa)
+
 
 func _on_meteorito_destruido(pos: Vector2)-> void:
 	var new_explosion:ExplosionMeteorito = explosion_meteorito.instance()
@@ -80,11 +94,15 @@ func _on_nave_destruida(nave: Player, posicion: Vector2, num_explosiones: int) -
 		add_child(new_explosion)
 		yield(get_tree().create_timer(0.6),"timeout")
 
-func _on_base_destruida(pos_partes: Array)-> void:
+func _on_base_destruida(_base, pos_partes: Array)-> void:
 	for posicion in pos_partes:
-		crear_explosion(posicion)
+		crear_explosion(posicion, 2.0)
 		yield(get_tree().create_timer(0.5),"timeout")
-		
+	
+	numero_bases_enemigas -= 1
+	if numero_bases_enemigas == 0:
+		crear_rele()
+	
 func crear_explosion(
 	posicion:Vector2,
 	numero: int = 1,

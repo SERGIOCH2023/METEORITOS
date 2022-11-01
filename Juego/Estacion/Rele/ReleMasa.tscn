@@ -298,7 +298,7 @@ anims/super_activado = SubResource( 4 )
 
 [node name="ActivadoSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
-volume_db = 24.0
+volume_db = 15.429
 
 [node name="DetectorPlayer" type="Area2D" parent="."]
 collision_layer = 0

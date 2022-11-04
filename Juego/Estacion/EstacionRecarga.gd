@@ -1,3 +1,4 @@
+#EstacionRecarga.gd
 class_name EstacionRecarga
 extends Node2D
 
@@ -23,20 +24,27 @@ func _unhandled_input(event: InputEvent) -> void:
 		nave_player.get_escudo().controlar_energia(radio_energia_entrega)
 	elif event.is_action("recarga_laser"):
 		nave_player.get_laser().controlar_energia(radio_energia_entrega)
-
+	
+	if event.is_action_released("recarga_laser"):
+		Eventos.emit_signal("ocultar_energia_laser")
+	elif event.is_action_released("recarga_escudo"):
+		Eventos.emit_signal("ocultar_energia_escudo")
+	
 ## Señales Internas
 func _on_AreaColision_body_entered(body: Node) -> void:
 	if body.has_method("destruir"):
 		body.destruir()
 
 func _on_AreaRecarga_body_entered(body: Node) -> void:
-	player_en_zona=true
 	if body is Player:
+		player_en_zona=true
 		nave_player = body
-		
+		Eventos.emit_signal("detecto_zona_recarga",true)
 	
 func _on_AreaRecarga_body_exited(body: Node) -> void:
-	player_en_zona=false
+	if body is Player:
+		player_en_zona = false
+		Eventos.emit_signal("detecto_zona_recarga",false)
 	
 
 ## Metodos Custom

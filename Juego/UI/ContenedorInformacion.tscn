@@ -75,6 +75,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="ContenedorInformacion" type="NinePatchRect"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 237.0
 margin_bottom = 99.0
 texture = ExtResource( 1 )

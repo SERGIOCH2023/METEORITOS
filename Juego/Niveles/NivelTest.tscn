@@ -24,9 +24,15 @@ explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 9 )
 enemigo_interceptor = ExtResource( 12 )
 rele_masa = ExtResource( 14 )
-tiempo_limite = 20
+tiempo_limite = 60
 
 [node name="HUD" parent="." instance=ExtResource( 15 )]
+
+[node name="InfoLaser" parent="HUD" index="4"]
+modulate = Color( 1, 1, 1, 1 )
+
+[node name="InfoEscudo" parent="HUD" index="5"]
+modulate = Color( 1, 1, 1, 1 )
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
@@ -40,10 +46,16 @@ numero_peligros = 3
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
 position = Vector2( -939.326, 1122.65 )
 
+[node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
+position = Vector2( 2406.92, -648.89 )
+
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
 position = Vector2( 330.552, -872.998 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( 2819.6, 1793.84 )
 
 [node name="TriggersInterceptores" type="Node" parent="."]
 
@@ -132,8 +144,16 @@ position = Vector2( 2000, 1000 )
 texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 738.25, 1860.91 )
+position = Vector2( 545.917, 565.49 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="timeout" from="ActualizadorTimer" to="." method="_on_ActualizadorTimer_timeout"]
+
+[editable path="HUD"]
+[editable path="HUD/InfoZonaRecarga"]
+[editable path="HUD/InfoMeteoritos"]
+[editable path="HUD/InfoTiempoRestante"]
+[editable path="HUD/InfoLaser"]
+[editable path="HUD/InfoEscudo"]
+[editable path="HUD/MiniMapa"]

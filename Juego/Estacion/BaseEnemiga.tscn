@@ -139,7 +139,9 @@ tracks/1/keys = {
 "values": [ Color( 0.298039, 0.54902, 0.74902, 0 ) ]
 }
 
-[node name="BaseEnemiga" type="Node2D"]
+[node name="BaseEnemiga" type="Node2D" groups=[
+"minimapa",
+]]
 z_index = 51
 z_as_relative = false
 script = ExtResource( 6 )

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=1]
 [ext_resource path="res://Juego/UI/HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Juego/UI/ContenedorInformacion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/UI/ContenedorInformacionEnergia.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Juego/UI/MiniMapa/MiniMapa.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "default"
@@ -101,6 +102,7 @@ auto_ocultar = true
 [node name="InfoLaser" parent="." groups=[
 "contenedor_info",
 ] instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 1 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -125,6 +127,7 @@ text = "Energia Laser"
 [node name="InfoEscudo" parent="." groups=[
 "contenedor_info",
 ] instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 1 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -146,8 +149,13 @@ margin_right = -10.1136
 margin_bottom = -17.6052
 text = "Energia Escudo"
 
+[node name="MiniMapa" parent="." groups=[
+"contenedor_info",
+] instance=ExtResource( 5 )]
+
 [editable path="InfoZonaRecarga"]
 [editable path="InfoMeteoritos"]
 [editable path="InfoTiempoRestante"]
 [editable path="InfoLaser"]
 [editable path="InfoEscudo"]
+[editable path="MiniMapa"]

@@ -28,12 +28,6 @@ tiempo_limite = 60
 
 [node name="HUD" parent="." instance=ExtResource( 15 )]
 
-[node name="InfoLaser" parent="HUD" index="4"]
-modulate = Color( 1, 1, 1, 1 )
-
-[node name="InfoEscudo" parent="HUD" index="5"]
-modulate = Color( 1, 1, 1, 1 )
-
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]

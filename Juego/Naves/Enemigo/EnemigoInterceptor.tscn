@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Juego/Naves/NaveBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Naves/Enemigo/EnemigoInterceptor.gd" type="Script" id=2]
@@ -143,6 +143,15 @@ radius = 591.583
 [sub_resource type="CircleShape2D" id=6]
 radius = 856.6
 
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.921569, 1, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
 [node name="EnemigoInterceptor" groups=[
 "minimapa",
 ] instance=ExtResource( 1 )]
@@ -198,6 +207,13 @@ collision_layer = 0
 modulate = Color( 0.74902, 0.192157, 0.192157, 1 )
 position = Vector2( -4.23792, 0 )
 shape = SubResource( 6 )
+
+[node name="BarraSalud" parent="." index="8"]
+margin_left = -110.0
+margin_top = 70.0
+margin_right = 30.0
+margin_bottom = 85.0
+custom_styles/fg = SubResource( 7 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="AreaDisparo" to="." method="_on_AreaDisparo_body_entered"]

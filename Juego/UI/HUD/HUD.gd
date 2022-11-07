@@ -23,6 +23,7 @@ func conectar_seniales()-> void:
 	Eventos.connect("ocultar_energia_laser",info_laser,"ocultar")
 	Eventos.connect("cambio_energia_escudo",self,"_on_actualizar_energia_escudo")
 	Eventos.connect("ocultar_energia_escudo",info_escudo,"ocultar")
+	Eventos.connect("nave_destruida",self,"_on_nave_destruida")
 	
 	
 func _on_actualizar_energia_laser(energia_max: float, energia_actual: float)-> void:

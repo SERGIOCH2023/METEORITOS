@@ -24,7 +24,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="MiniMapa" type="MarginContainer"]
+[node name="MiniMapa" type="MarginContainer" groups=[
+"contenedor_info",
+]]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

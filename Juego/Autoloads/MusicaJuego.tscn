@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Juego/Niveles/Musicas/POL-galaxy-nauts-short.wav" type="AudioStream" id=1]
+[ext_resource path="res://Juego/Niveles/Musicas/POL-the-horror-show-short.wav" type="AudioStream" id=2]
+[ext_resource path="res://Juego/Autoloads/MusicaJuego.gd" type="Script" id=3]
+[ext_resource path="res://Juego/Menu/MusicaMenuPrincipal/POL-dusty-old-tower-short.wav" type="AudioStream" id=4]
+[ext_resource path="res://Juego/Menu/Boton1.ogg" type="AudioStream" id=5]
+
+[node name="MusicaJuego" type="Node"]
+script = ExtResource( 3 )
+
+[node name="MusicaNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Musica"
+
+[node name="MusicaCombate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Musica"
+
+[node name="TweenMusicaOn" type="Tween" parent="."]
+
+[node name="TweenMusicaOff" type="Tween" parent="."]
+
+[node name="MusicaMenuPrincipal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Musica"
+
+[node name="BotonMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="tween_completed" from="TweenMusicaOff" to="." method="_on_TweenMusicaOff_tween_completed"]

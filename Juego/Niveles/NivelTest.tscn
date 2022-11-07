@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Juego/Estacion/Rele/ReleMasa.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Juego/UI/HUD/HUD.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Juego/Niveles/Musicas/POL-ninja-panda-short.wav" type="AudioStream" id=16]
+[ext_resource path="res://Juego/Niveles/Musicas/POL-the-horror-show-short.wav" type="AudioStream" id=17]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 2 )
@@ -25,6 +27,8 @@ sector_meteoritos = ExtResource( 9 )
 enemigo_interceptor = ExtResource( 12 )
 rele_masa = ExtResource( 14 )
 tiempo_limite = 60
+musica_nivel = ExtResource( 16 )
+musica_combate = ExtResource( 17 )
 
 [node name="HUD" parent="." instance=ExtResource( 15 )]
 
@@ -41,15 +45,18 @@ numero_peligros = 3
 position = Vector2( -939.326, 1122.65 )
 
 [node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
-position = Vector2( 2406.92, -648.89 )
+position = Vector2( 7124.07, 278.412 )
 
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 330.552, -872.998 )
+position = Vector2( 705.403, -3034.91 )
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 2819.6, 1793.84 )
+position = Vector2( 783.568, 5180.51 )
+
+[node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( -7481.51, 40.0293 )
 
 [node name="TriggersInterceptores" type="Node" parent="."]
 

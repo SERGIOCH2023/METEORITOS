@@ -49,8 +49,7 @@ func crear(pos: Vector2, dir: Vector2, tamanio: float)-> void:
 	angular_velocity = (vel_ang_base/tamanio)*aleatorizar_velocidad()
 	#Calcular hitpoints
 	hitpoints = hitpoints_base*tamanio
-	#Solo debug
-	print("hitpoints: ", hitpoints)
+	
 
 ##Metodos Custom
 func aleatorizar_velocidad()-> float:
@@ -62,7 +61,6 @@ func recibir_danio(danio: float)-> void:
 	if hitpoints <=0 and not esta_destruido:
 		esta_destruido = true
 		destruir()
-	#impacto_sfx.play()
 	impacto_anim.play("impacto")
 
 func destruir()-> void:
@@ -71,6 +69,5 @@ func destruir()-> void:
 	
 	queue_free()
 
-## Setters y Getters
 func set_esta_en_sector(valor: bool)-> void:
 	esta_en_sector = valor

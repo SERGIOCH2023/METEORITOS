@@ -8,6 +8,7 @@ enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
 ## Atributos Export
 export var hitpoinsts:float = 20.0
 
+
 ## Atributos
 var estado_actual:int = ESTADO.SPAWN
 
@@ -15,9 +16,13 @@ var estado_actual:int = ESTADO.SPAWN
 onready var canion:Canion = $Canion
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_sfx:AudioStreamPlayer =$ImpactosSFX
+onready var barra_salud:BarraSalud = $BarraSalud
+
 
 ##Metodos
 func _ready() -> void:
+	barra_salud.max_value = hitpoinsts
+	barra_salud.value = hitpoinsts
 	controlador_estados(estado_actual)
 
 ## Metodos Custom
@@ -45,6 +50,8 @@ func recibir_danio(danio: float) -> void:
 	hitpoinsts -= danio
 	if hitpoinsts <= 0.0:
 		destruir()
+		
+	barra_salud.controlar_barra(hitpoinsts,true)
 	impacto_sfx.play()
 
 func destruir() -> void:

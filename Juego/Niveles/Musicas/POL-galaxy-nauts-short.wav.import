@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-galaxy-nauts-short.wav-18159097cdd430be1e09ba36063cb242.sample"
+
+[deps]
+
+source_file="res://Juego/Niveles/Musicas/POL-galaxy-nauts-short.wav"
+dest_files=[ "res://.import/POL-galaxy-nauts-short.wav-18159097cdd430be1e09ba36063cb242.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -13,6 +13,9 @@ var estado_ia_actual:int = ESTADO_IA.IDLE
 var potencia_actual:float = 0.0
 
 ## Metodos
+func _ready() -> void:
+	Eventos.emit_signal("minimapa_objeto_creado")
+
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	linear_velocity += dir_player.normalized()*potencia_actual*state.get_step()
 	linear_velocity.x = clamp(linear_velocity.x, -potencia_max, potencia_max)
@@ -38,14 +41,14 @@ func controlador_estados_ia(nuevo_estado: int)-> void:
 	estado_ia_actual = nuevo_estado
 
 ## Señales Internas
-func _on_AreaDisparo_body_entered(body: Node) -> void:
+func _on_AreaDisparo_body_entered(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOP)
 
-func _on_AreaDisparo_body_exited(body: Node) -> void:
+func _on_AreaDisparo_body_exited(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.PERSECUCION)
 
-func _on_AreaDeteccion_body_entered(body: Node) -> void:
+func _on_AreaDeteccion_body_entered(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOQ)
 
-func _on_AreaDeteccion_body_exited(body: Node) -> void:
+func _on_AreaDeteccion_body_exited(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOP)

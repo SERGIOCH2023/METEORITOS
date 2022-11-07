@@ -12,6 +12,7 @@ export (Array, PackedScene) var rutas
 ## Atributos Onready
 onready var impacto_sfx:AudioStreamPlayer2D = $ImpactoSFX
 onready var timer_spawner:Timer = $TimerSpawnEnemigos
+onready var barra_salud:BarraSalud = $BarraSalud
 
 # Atributos
 var esta_destruida:bool = false
@@ -20,18 +21,19 @@ var ruta_seleccionada: Path2D
 
 ## Metodos
 func _ready() -> void:
+	barra_salud.set_valores(hitpoints)
 	timer_spawner.wait_time = intervalo_spawn
 	$AnimationPlayer.play(elegir_animacion_aleatoria())
 	seleccionar_ruta()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var player_objetivo:Player = DatosJuego.get_player_actual()
 	if not player_objetivo:
 		return
 	
 	var dir_player:Vector2 = player_objetivo.global_position - global_position
 	var angulo_player:float = rad2deg(dir_player.angle())
-	print(angulo_player)
+
 func elegir_animacion_aleatoria()-> String:
 	randomize()
 	var num_anim:int = $AnimationPlayer.get_animation_list().size() -1
@@ -94,6 +96,7 @@ func recibir_danio(danio:float)-> void:
 	if hitpoints <= 0 and not esta_destruida:
 		esta_destruida = true
 		destruir()
+	barra_salud.set_hitpoints_actual(hitpoints)
 	impacto_sfx.play()
 
 func destruir()-> void:
@@ -104,6 +107,7 @@ func destruir()-> void:
 		$Sprites/Sprite1.global_position,
 	]
 	Eventos.emit_signal("base_destruida",self, posicion_partes)
+	Eventos.emit_signal("minimapa_objeto_destruido", self)
 	queue_free()
 
 func _on_AreaColision_body_entered(body: Node) -> void:
@@ -119,7 +123,6 @@ func _on_VisibilityNotifier2D_screen_entered() -> void:
 
 
 func _on_TimerSpawnEnemigos_timeout() -> void:
-	print("Orbitales restantes: ", numero_orbitales)
 	if numero_orbitales == 0:
 		timer_spawner.stop()
 		return

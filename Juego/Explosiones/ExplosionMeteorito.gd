@@ -12,5 +12,5 @@ func elegir_explosion_aleatoria()-> String:
 	
 	return lista_animacion[indice_anim_aleatoria]
 	
-func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+func _on_AnimationPlayer_animation_finished(_anim_name: String) -> void:
 	queue_free()

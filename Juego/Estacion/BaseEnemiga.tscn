@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Juego/Estacion/AreaAtraccion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Estacion/StationEnemiga_029.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Juego/Estacion/PosicionesSpawn.gd" type="Script" id=9]
 [ext_resource path="res://Juego/RutaEnemigo2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Juego/RutaEnemigo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Juego/UI/BarraSalud.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 64.0
@@ -139,7 +140,18 @@ tracks/1/keys = {
 "values": [ Color( 0.298039, 0.54902, 0.74902, 0 ) ]
 }
 
-[node name="BaseEnemiga" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.945098, 0, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[node name="BaseEnemiga" type="Node2D" groups=[
+"minimapa",
+]]
 z_index = 51
 z_as_relative = false
 script = ExtResource( 6 )
@@ -221,8 +233,17 @@ position = Vector2( 350, 0 )
 
 [node name="TimerSpawnEnemigos" type="Timer" parent="."]
 
+[node name="BarraSalud" parent="." instance=ExtResource( 12 )]
+margin_left = -105.0
+margin_top = -287.0
+margin_right = 109.0
+margin_bottom = -260.0
+rect_rotation = 0.0
+custom_styles/fg = SubResource( 8 )
+
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="timeout" from="TimerSpawnEnemigos" to="." method="_on_TimerSpawnEnemigos_timeout"]
 
 [editable path="AreaAtraccion"]
+[editable path="BarraSalud"]

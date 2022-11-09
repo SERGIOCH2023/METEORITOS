@@ -10,9 +10,10 @@ export var sector_meteoritos:PackedScene = null
 export var tiempo_transicion_camara:float = 2.0
 export var enemigo_interceptor:PackedScene = null
 export var rele_masa:PackedScene = null
-export var tiempo_limite:int = 15
+export var tiempo_limite:int = 10
 export var musica_nivel:AudioStream = null
 export var musica_combate:AudioStream = null
+export(String, FILE, "*.tscn") var prox_nivel = ""
 
 ##Atributos Onready
 onready var contenedor_enemigos:Node
@@ -52,13 +53,19 @@ func conectar_seniales() -> void:
 	Eventos.connect("nave_en_sector_peligro",self,"_on_nave_en_sector_peligro")
 	Eventos.connect("base_destruida",self,"_on_base_destruida")
 	Eventos.connect("spawn_orbital",self,"_on_spawn_orbital")
+	Eventos.connect("nivel_completado",self,"_on_nivel_completado")
+
+func _on_nivel_completado()-> void:
+	Eventos.emit_signal("nivel_terminado")
+	yield(get_tree().create_timer(1.0),"timeout")
+	get_tree().change_scene(prox_nivel)
 
 func destruir_nivel() -> void:
 	crear_explosion(
 		player.global_position,
 		8.0,
 		2,
-		1.5,
+		1,
 		Vector2(300.0,200.0)
 	)
 	player.destruir()
@@ -114,7 +121,7 @@ func _on_nave_destruida(nave: Player, posicion: Vector2, num_explosiones: int) -
 			tiempo_transicion_camara
 		)
 		$RestartTimer.start()
-	crear_explosion(posicion,1,num_explosiones, 0.6, Vector2(100.0,50.0))
+	crear_explosion(posicion,1.0,num_explosiones, 0.6, Vector2(100.0,50.0))
 	
 	for _i in range(num_explosiones):
 		var new_explosion:Node2D = explosion.instance()

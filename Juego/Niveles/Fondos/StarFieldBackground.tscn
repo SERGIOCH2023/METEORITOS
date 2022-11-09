@@ -19,7 +19,6 @@ __meta__ = {
 [node name="EstrellasCercanas" type="ParallaxLayer" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
 scale = Vector2( 0.06, 0.06 )
-motion_scale = Vector2( 0.1, 0.1 )
 motion_mirroring = Vector2( 1920, 1080 )
 
 [node name="StarField" parent="EstrellasCercanas" instance=ExtResource( 1 )]
@@ -27,14 +26,12 @@ motion_mirroring = Vector2( 1920, 1080 )
 [node name="EstrellasMedias" type="ParallaxLayer" parent="."]
 modulate = Color( 1, 1, 1, 0.705882 )
 scale = Vector2( 0.03, 0.03 )
-motion_scale = Vector2( 0.05, 0.05 )
 motion_mirroring = Vector2( 1920, 1080 )
 
 [node name="StarField" parent="EstrellasMedias" instance=ExtResource( 1 )]
 
 [node name="EstrellasLejanas" type="ParallaxLayer" parent="."]
 modulate = Color( 1, 1, 1, 0.588235 )
-motion_scale = Vector2( 0.01, 0.01 )
 motion_mirroring = Vector2( 1920, 1080 )
 
 [node name="StarField" parent="EstrellasLejanas" instance=ExtResource( 1 )]

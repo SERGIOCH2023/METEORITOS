@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "spawn"
 length = 1.6
 tracks/0/type = "value"
@@ -18,4 +18,4 @@ tracks/0/keys = {
 
 [node name="AnimationPlayer" type="AnimationPlayer"]
 autoplay = "spawn"
-anims/spawn = SubResource( 3 )
+anims/spawn = SubResource( 1 )

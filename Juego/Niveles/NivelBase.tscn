@@ -23,6 +23,7 @@ explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 9 )
 enemigo_interceptor = ExtResource( 12 )
 rele_masa = ExtResource( 14 )
+tiempo_limite = 120
 musica_nivel = ExtResource( 16 )
 musica_combate = ExtResource( 17 )
 
@@ -52,6 +53,10 @@ one_shot = true
 [node name="ActualizadorTimer" type="Timer" parent="."]
 
 [node name="StarFieldBackground" parent="." instance=ExtResource( 8 )]
+color_fondo = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect" parent="StarFieldBackground" index="0"]
+color = Color( 1, 0, 0, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 

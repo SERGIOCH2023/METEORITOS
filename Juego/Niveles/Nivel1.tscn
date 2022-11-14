@@ -7,29 +7,17 @@
 [node name="Nivel1" instance=ExtResource( 1 )]
 prox_nivel = "res://Juego/Niveles/Nivel2.tscn"
 
-[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
-position = Vector2( -1068.05, 611.132 )
+[node name="EstacionRecarga4" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 1973.47, 1861.98 )
 
-[node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 2 )]
-position = Vector2( 2077.16, -1651.61 )
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
+position = Vector2( 957.849, 3005.75 )
 
-[node name="EstacionRecarga3" parent="ContenedorEstaciones" index="2" instance=ExtResource( 2 )]
-position = Vector2( 1058.92, 4073.13 )
+[node name="StarFieldBackground" parent="." index="10"]
+color_fondo = Color( 0, 0, 0, 1 )
 
-[node name="EstacionRecarga4" parent="ContenedorEstaciones" index="3" instance=ExtResource( 2 )]
-position = Vector2( 6851.54, 565.877 )
-
-[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1273.67, -1262.24 )
-
-[node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
-position = Vector2( 4837.49, 638.459 )
-
-[node name="BaseEnemiga4" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 3 )]
-position = Vector2( -2810.58, 593.204 )
-
-[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="3" instance=ExtResource( 3 )]
-position = Vector2( 1330.78, 2615.87 )
+[node name="ColorRect" parent="StarFieldBackground" index="0"]
+color = Color( 0, 0, 0, 1 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 616.843, 576.863 )

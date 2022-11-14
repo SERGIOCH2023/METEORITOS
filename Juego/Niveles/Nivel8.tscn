@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Estacion/EstacionRecarga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/peligros/SectorDePeligro.tscn" type="PackedScene" id=4]
+
+[node name="Nivel8" instance=ExtResource( 1 )]
+prox_nivel = "res://Juego/Niveles/Nivel9.tscn"
+
+[node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 4 )]
+position = Vector2( 1534.3, 1257.63 )
+rotation = 0.785398
+tipo_peligro = "Meteorito"
+
+[node name="SectorDePeligro2" parent="TriggersLluviaMeteoritos" index="1" instance=ExtResource( 4 )]
+position = Vector2( 4612.13, 4619.72 )
+rotation = 0.785398
+tipo_peligro = "Meteorito"
+numero_peligros = 20
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 3643.21, 3487.46 )
+
+[node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 5737.99, 5748.04 )
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
+position = Vector2( 2759.18, 2324.96 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
+position = Vector2( 7042.24, 7104.36 )
+
+[node name="StarFieldBackground" parent="." index="10"]
+color_fondo = Color( 0.0392157, 0.109804, 0.0352941, 1 )
+
+[node name="ColorRect" parent="StarFieldBackground" index="0"]
+color = Color( 0.0392157, 0.109804, 0.0352941, 1 )
+
+[node name="Player" parent="." index="11"]
+position = Vector2( 627.192, 555.921 )
+
+[editable path="HUD"]
+[editable path="HUD/InfoZonaRecarga"]
+[editable path="HUD/InfoMeteoritos"]
+[editable path="HUD/InfoTiempoRestante"]
+[editable path="HUD/InfoLaser"]
+[editable path="HUD/InfoEscudo"]
+[editable path="HUD/MiniMapa"]
+[editable path="StarFieldBackground"]

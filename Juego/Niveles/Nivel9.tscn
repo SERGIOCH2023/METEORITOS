@@ -10,7 +10,8 @@ prox_nivel = "res://Juego/Niveles/Nivel10.tscn"
 
 [node name="SectorDePeligro2" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 4 )]
 position = Vector2( 6942.82, 557.34 )
-tipo_peligro = "Enemigo"
+tipo_peligro = "Meteorito"
+numero_peligros = 20
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
 position = Vector2( 5066.72, 528.57 )
@@ -24,12 +25,12 @@ position = Vector2( 11455.8, 545.842 )
 [node name="SectorDePeligro2" parent="TriggersInterceptores" index="0" instance=ExtResource( 4 )]
 position = Vector2( 2076.32, 533.367 )
 tipo_peligro = "Enemigo"
-numero_peligros = 2
+numero_peligros = 3
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="1" instance=ExtResource( 4 )]
 position = Vector2( 9144.28, 527.655 )
 tipo_peligro = "Enemigo"
-numero_peligros = 2
+numero_peligros = 3
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.0470588, 0.117647, 0.0156863, 1 )

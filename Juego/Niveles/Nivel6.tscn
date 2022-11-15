@@ -6,11 +6,12 @@
 [ext_resource path="res://Juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=4]
 
 [node name="Nivel6" instance=ExtResource( 1 )]
+tiempo_transicion_camara = 1.0
 prox_nivel = "res://Juego/Niveles/Nivel7.tscn"
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 3 )]
 position = Vector2( 20069, 69.4316 )
-scale = Vector2( 1, 5 )
+scale = Vector2( 1, 1.3 )
 tipo_peligro = "Meteorito"
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
@@ -21,12 +22,15 @@ position = Vector2( 23047.4, 162.661 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
 position = Vector2( 8138.11, -6881.03 )
+numero_orbitales = 8
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 4 )]
 position = Vector2( 13425.1, 66.8848 )
+numero_orbitales = 8
 
 [node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 4 )]
 position = Vector2( 25695.5, 120.703 )
+numero_orbitales = 8
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 3 )]
 position = Vector2( 7739.92, 101.709 )

@@ -12,12 +12,15 @@ position = Vector2( 1933.05, 1419.59 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
 position = Vector2( 6511.29, 568.121 )
+numero_orbitales = 5
 
 [node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
 position = Vector2( 367.294, -3431.88 )
+numero_orbitales = 5
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 3 )]
 position = Vector2( 6522.92, -3392.62 )
+numero_orbitales = 5
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.137255, 0.0901961, 0.0901961, 1 )

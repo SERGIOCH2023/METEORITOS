@@ -81,7 +81,7 @@ func player_input() -> void:
 	elif Input.is_action_pressed("mover_atras"):
 		empuje = Vector2(-potencia_motor, 0)
 		motor_sfx.sonido_on()
-		
+	
 	# Rotacion
 	dir_rotacion=0
 	if Input.is_action_pressed("rotar_antihorario"):

@@ -16,12 +16,15 @@ position = Vector2( 8668.54, -3050.6 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
 position = Vector2( 1035.23, 8929.14 )
+numero_orbitales = 7
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
 position = Vector2( 10893.8, 8929.14 )
+numero_orbitales = 7
 
 [node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 3 )]
 position = Vector2( 10712.6, 79.374 )
+numero_orbitales = 7
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 4 )]
 position = Vector2( 5897.34, 8989.84 )

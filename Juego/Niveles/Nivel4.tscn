@@ -102,14 +102,17 @@ anims/defaul = SubResource( 2 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
 position = Vector2( 7443.36, 152.058 )
+numero_orbitales = 5
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
 position = Vector2( 12466.6, 204.99 )
+numero_orbitales = 5
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 4 )]
-position = Vector2( 3639.84, 443.499 )
+position = Vector2( 3704.07, 218.704 )
 scale = Vector2( 1, 5 )
 tipo_peligro = "Enemigo"
+numero_peligros = 2
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.109804, 0.109804, 0.0980392, 1 )

@@ -6,6 +6,7 @@
 [ext_resource path="res://Juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=4]
 
 [node name="Nivel10" instance=ExtResource( 1 )]
+tiempo_limite = 480
 prox_nivel = "res://Juego/Menu/MenuVictoria.tscn"
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 3 )]
@@ -21,53 +22,39 @@ tipo_peligro = "Meteorito"
 numero_peligros = 20
 
 [node name="SectorDePeligro3" parent="TriggersLluviaMeteoritos" index="2" instance=ExtResource( 3 )]
-position = Vector2( 1916.96, -1357.2 )
+position = Vector2( 2086.47, -1458.91 )
 rotation = 1.5708
 tipo_peligro = "Meteorito"
 numero_peligros = 20
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
 position = Vector2( -870.907, 3211.02 )
+energia = 15.0
 
 [node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 2 )]
-position = Vector2( 2097.35, -2116.62 )
+position = Vector2( 2097.35, -2591.26 )
+energia = 15.0
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
-position = Vector2( 723.038, 4661.69 )
-numero_orbitales = 13
+position = Vector2( 494.452, 4077.53 )
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 4 )]
 position = Vector2( 627.901, -4224.06 )
-numero_orbitales = 13
 
 [node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 4 )]
-position = Vector2( -6830.81, -0.000488281 )
-numero_orbitales = 13
+position = Vector2( -2386.09, -126.993 )
 
 [node name="BaseEnemiga4" parent="ContenedorBasesEnemigas" index="3" instance=ExtResource( 4 )]
-position = Vector2( 9323.38, 133.19 )
-numero_orbitales = 13
+position = Vector2( 3329.35, -19.2006 )
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 3 )]
 position = Vector2( -507.4, 2516.54 )
 rotation = 1.5708
 tipo_peligro = "Enemigo"
-numero_peligros = 3
+numero_peligros = 2
 
 [node name="SectorDePeligro3" parent="TriggersInterceptores" index="1" instance=ExtResource( 3 )]
 position = Vector2( 691.32, 2535.56 )
-rotation = 1.5708
-tipo_peligro = "Enemigo"
-numero_peligros = 3
-
-[node name="SectorDePeligro2" parent="TriggersInterceptores" index="2" instance=ExtResource( 3 )]
-position = Vector2( 558.128, -2792.08 )
-rotation = 1.5708
-tipo_peligro = "Enemigo"
-numero_peligros = 3
-
-[node name="SectorDePeligro4" parent="TriggersInterceptores" index="3" instance=ExtResource( 3 )]
-position = Vector2( 1509.49, -3077.49 )
 rotation = 1.5708
 tipo_peligro = "Enemigo"
 numero_peligros = 2
@@ -80,6 +67,9 @@ color = Color( 0.133333, 0.133333, 0.133333, 1 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 619.182, 528.57 )
+potencia_motor = 18
+potencia_rotacion = 260
+estela_maxima = 150
 
 [editable path="HUD"]
 [editable path="HUD/InfoZonaRecarga"]

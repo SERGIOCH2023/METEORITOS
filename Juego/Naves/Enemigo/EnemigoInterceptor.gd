@@ -17,7 +17,8 @@ func _ready() -> void:
 	Eventos.emit_signal("minimapa_objeto_creado")
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
-	linear_velocity += dir_player.normalized()*potencia_actual*state.get_step()
+	#print("Potencia Actual: ", potencia_actual)
+	linear_velocity += dir_player.normalized() * potencia_actual * state.get_step()
 	linear_velocity.x = clamp(linear_velocity.x, -potencia_max, potencia_max)
 	linear_velocity.y = clamp(linear_velocity.y, -potencia_max, potencia_max)
 
@@ -42,13 +43,10 @@ func controlador_estados_ia(nuevo_estado: int)-> void:
 
 ## Señales Internas
 func _on_AreaDisparo_body_entered(_body: Node) -> void:
-	controlador_estados_ia(ESTADO_IA.ATACANDOP)
-
-func _on_AreaDisparo_body_exited(_body: Node) -> void:
-	controlador_estados_ia(ESTADO_IA.PERSECUCION)
-
-func _on_AreaDeteccion_body_entered(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOQ)
-
-func _on_AreaDeteccion_body_exited(_body: Node) -> void:
+func _on_AreaDisparo_body_exited(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOP)
+func _on_AreaDeteccion_body_entered(_body: Node) -> void:
+	controlador_estados_ia(ESTADO_IA.ATACANDOP)
+func _on_AreaDeteccion_body_exited(_body: Node) -> void:
+	controlador_estados_ia(ESTADO_IA.PERSECUCION)

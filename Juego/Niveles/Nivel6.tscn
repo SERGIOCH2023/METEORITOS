@@ -7,6 +7,7 @@
 
 [node name="Nivel6" instance=ExtResource( 1 )]
 tiempo_transicion_camara = 1.0
+tiempo_limite = 240
 prox_nivel = "res://Juego/Niveles/Nivel7.tscn"
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 3 )]
@@ -36,12 +37,14 @@ numero_orbitales = 8
 position = Vector2( 7739.92, 101.709 )
 scale = Vector2( 1, 5 )
 tipo_peligro = "Enemigo"
+numero_peligros = 2
 
 [node name="SectorDePeligro2" parent="TriggersInterceptores" index="1" instance=ExtResource( 3 )]
 position = Vector2( 5119.28, -4212.26 )
 rotation = -0.785398
 scale = Vector2( 1, 5 )
 tipo_peligro = "Enemigo"
+numero_peligros = 2
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.113725, 0.121569, 0.0431373, 1 )
@@ -51,6 +54,9 @@ color = Color( 0.113725, 0.121569, 0.0431373, 1 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 542.445, 644.154 )
+potencia_motor = 18
+potencia_rotacion = 260
+estela_maxima = 150
 
 [editable path="HUD"]
 [editable path="HUD/InfoZonaRecarga"]

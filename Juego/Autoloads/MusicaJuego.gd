@@ -78,6 +78,6 @@ func stop_todo()-> void:
 			nodo.stop()
 
 
-func _on_TweenMusicaOff_tween_completed(object: Object, key: NodePath) -> void:
+func _on_TweenMusicaOff_tween_completed(object: Object, _key: NodePath) -> void:
 	object.stop()
 	object.volume_db = vol_original_musica_off

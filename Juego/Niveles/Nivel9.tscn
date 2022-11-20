@@ -6,21 +6,25 @@
 [ext_resource path="res://Juego/peligros/SectorDePeligro.tscn" type="PackedScene" id=4]
 
 [node name="Nivel9" instance=ExtResource( 1 )]
+tiempo_limite = 480
 prox_nivel = "res://Juego/Niveles/Nivel10.tscn"
 
 [node name="SectorDePeligro2" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 4 )]
-position = Vector2( 6942.82, 557.34 )
+position = Vector2( 7857.71, 530.431 )
 tipo_peligro = "Meteorito"
 numero_peligros = 20
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
-position = Vector2( 5066.72, 528.57 )
+position = Vector2( 5308.9, 474.753 )
+energia = 15.0
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
 position = Vector2( 3403.39, 514.318 )
+numero_orbitales = 7
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
 position = Vector2( 11455.8, 545.842 )
+numero_orbitales = 7
 
 [node name="SectorDePeligro2" parent="TriggersInterceptores" index="0" instance=ExtResource( 4 )]
 position = Vector2( 2076.32, 533.367 )
@@ -28,9 +32,9 @@ tipo_peligro = "Enemigo"
 numero_peligros = 3
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="1" instance=ExtResource( 4 )]
-position = Vector2( 9144.28, 527.655 )
+position = Vector2( 10005.4, 500.746 )
 tipo_peligro = "Enemigo"
-numero_peligros = 3
+numero_peligros = 1
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.0470588, 0.117647, 0.0156863, 1 )
@@ -40,6 +44,9 @@ color = Color( 0.0470588, 0.117647, 0.0156863, 1 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 627.202, 567.872 )
+potencia_motor = 18
+potencia_rotacion = 260
+estela_maxima = 150
 
 [editable path="HUD"]
 [editable path="HUD/InfoZonaRecarga"]

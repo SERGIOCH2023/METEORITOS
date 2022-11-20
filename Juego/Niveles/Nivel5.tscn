@@ -9,32 +9,34 @@
 prox_nivel = "res://Juego/Niveles/Nivel6.tscn"
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
-position = Vector2( 11266.1, 4439.98 )
+position = Vector2( 9876.71, 2567.33 )
 
 [node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 2 )]
-position = Vector2( 8668.54, -3050.6 )
+position = Vector2( 8124.87, -30.2004 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1035.23, 8929.14 )
+position = Vector2( 854.007, 5425.48 )
 numero_orbitales = 7
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
-position = Vector2( 10893.8, 8929.14 )
+position = Vector2( 9836.66, 5787.92 )
 numero_orbitales = 7
 
 [node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 3 )]
-position = Vector2( 10712.6, 79.374 )
+position = Vector2( 9897.09, 18.9658 )
 numero_orbitales = 7
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 4 )]
-position = Vector2( 5897.34, 8989.84 )
+position = Vector2( 5897.34, 5606.99 )
 scale = Vector2( 1, 5 )
 tipo_peligro = "Enemigo"
+numero_peligros = 2
 
 [node name="SectorDePeligro2" parent="TriggersInterceptores" index="1" instance=ExtResource( 4 )]
 position = Vector2( 5867.13, 109.875 )
 scale = Vector2( 1, 5 )
 tipo_peligro = "Enemigo"
+numero_peligros = 2
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.12549, 0.0588235, 0.117647, 1 )
@@ -44,6 +46,9 @@ color = Color( 0.12549, 0.0588235, 0.117647, 1 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 455.486, 575.35 )
+potencia_motor = 18
+potencia_rotacion = 260
+estela_maxima = 150
 
 [editable path="HUD"]
 [editable path="HUD/InfoZonaRecarga"]

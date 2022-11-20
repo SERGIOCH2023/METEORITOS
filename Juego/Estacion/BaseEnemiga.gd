@@ -31,9 +31,6 @@ func _process(_delta: float) -> void:
 	if not player_objetivo:
 		return
 	
-	var dir_player:Vector2 = player_objetivo.global_position - global_position
-	var angulo_player:float = rad2deg(dir_player.angle())
-
 func elegir_animacion_aleatoria()-> String:
 	randomize()
 	var num_anim:int = $AnimationPlayer.get_animation_list().size() -1

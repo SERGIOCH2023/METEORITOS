@@ -149,9 +149,7 @@ border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
-[node name="BaseEnemiga" type="Node2D" groups=[
-"minimapa",
-]]
+[node name="BaseEnemiga" type="Node2D" groups=["minimapa"]]
 z_index = 51
 z_as_relative = false
 script = ExtResource( 6 )
@@ -240,6 +238,7 @@ margin_right = 109.0
 margin_bottom = -260.0
 rect_rotation = 0.0
 custom_styles/fg = SubResource( 8 )
+siempre_visible = true
 
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
